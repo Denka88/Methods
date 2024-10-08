@@ -19,9 +19,9 @@ public class Main {
     public static void triangle(int a, int b, int c){
 
         if(a + b > c && a + c > b && b + c > a){
-            System.out.println("Такой треугольник существует");
+            System.out.println("True");
         }else {
-            System.out.println("Такого треугольника не существует");
+            System.out.println("False");
         }
 
 
