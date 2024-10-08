@@ -6,7 +6,7 @@ public class Ex2 {
 
         Scanner scan = new Scanner(System.in);
 
-        System.out.print("Введите кол-во раундов:");
+        System.out.print("Введите кол-во раундов: ");
         int x = scan.nextInt();
 
         kub(x);
@@ -16,37 +16,34 @@ public class Ex2 {
     public static void kub(int x) {
 
         Random random = new Random();
+        
+        int winsP1 = 0;
+        int winsP2 = 0;
+        int noWins = 0;
 
-        int p1 = 0;
-        int p2 = 0;
+        for (int i = 1; i <= x; i++){
 
-        for (int i = 1; i < x; i++){
+            System.out.println("+++Раунд №" + i + "+++");
+            
+            int p1 = random.nextInt(1, 7);
+            int p2 = random.nextInt(1, 7);
 
-            p1+=random.nextInt(6);
-            p2+=random.nextInt(6);
-
-            System.out.println("Игрок 1: " + p1 + " очков");
+            System.out.println("\nИгрок 1: " + p1 + " очков");
             System.out.println("Игрок 2: " + p2 + " очков");
-
             if (p1 < p2){
-                System.out.println("В раунде " + i + " победил игрок 1");
-            }else if(p2 < p1){
-                System.out.println("В раунде " + i + " победил игрок 2");
+                System.out.println("Победил игрок 1\n");
+                winsP1++;
+            }else if(p1 > p2){
+                System.out.println("Победил игрок 2\n");
+                winsP2++;
             }else {
-                System.out.println("В раунде " + i + " ничья");
+                System.out.println("Ничья\n");
+                noWins++;
             }
+            
         }
-
-        System.out.println("Игрок 1: " + p1 + " очков");
-        System.out.println("Игрок 2: " + p2 + " очков");
-
-        if (p1 < p2){
-            System.out.println("Победил игрок 1");
-        }else if(p2 < p1){
-            System.out.println("Победил игрок 2");
-        }else {
-            System.out.println("Ничья");
-        }
+        System.out.println("+++РЕЗУЛЬТАТЫ+++");
+        System.out.print("Побед игрока 1: " + winsP1 + "\nПобед игрока 2: " + winsP2 + "\nНичьих: " + noWins);
 
     }
 
