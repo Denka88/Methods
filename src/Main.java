@@ -12,18 +12,13 @@ public class Main {
         System.out.print("Введите сторону c:");
         int c = scan.nextInt();
 
-        triangle(a, b, c);
+        System.out.println(triangle(a, b, c));
 
     }
 
-    public static void triangle(int a, int b, int c){
+    public static boolean triangle(int a, int b, int c){
 
-        if(a + b > c && a + c > b && b + c > a){
-            System.out.println("True");
-        }else {
-            System.out.println("False");
-        }
-
+        return a + b > c && a + c > b && b + c > a;
 
     }
 
